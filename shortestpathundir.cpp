@@ -13,12 +13,10 @@ vector<int> shortestPath( vector<pair<int,int>> edges , int n , int m, int s , i
        adj[u].push_back(v);
 	   adj[v].push_back(u);
 	}
-
-
 	unordered_map<int,bool> visited;
-     unordered_map<int,int> parent;
+    unordered_map<int,int> parent;
 
-	 queue<int> q;
+	 queue<int> q;  
 	 q.push(s);
 	 visited[s]=true;
 	 parent[s]=-1;
@@ -35,8 +33,6 @@ vector<int> shortestPath( vector<pair<int,int>> edges , int n , int m, int s , i
       }
     }
          }
-
-
    vector<int> ans;
    int currentNode=t;
    ans.push_back(currentNode);

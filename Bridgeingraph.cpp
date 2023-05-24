@@ -4,7 +4,7 @@
 // to find no of bridges 
 // we take  tim and low vector
 // tim vector stores the no of timth dfs call has to make to reach the node
-// low vector check all the neighbour exext parent to curr node and fill it up with samellest  low[neigbours];
+// low vector check all the neighbour execpt parent to curr node and fill it up with samellest  low[neigbours];
 // we use both vecotor to find no of bridges
 // we make dfs call and while returning of call we check for bridges
 
@@ -25,16 +25,14 @@ int timer=1;
           }
           if(visited[it]==0){
               dfs(it,node,adj,tim,low,visited,bridges);
-              low[node]=min(low[node],low[it]);
+        // call ke baad cheeeje likhne ka mtlb hai ki base point hit krne ke baad ab vo backtrack hori hai
+              low[node]=min(low[node],low[it]); 
               if(low[it]>tim[node]){
                   bridges.push_back({node,it});
-
               }
-
           }
           else{
               low[node]=min(low[node],low[it]);
-
           }
 
       }

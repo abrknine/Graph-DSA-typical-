@@ -2,9 +2,7 @@
 //prim's algo is ude to find the minimum spanning tree of graph
 //it gernally retrun the vector i with every  indec is node ans its element is parent to tat node then we can make a tree out of it  with is 
  //spanning tree -> tree in graph which contain n( no of nodes in graph too) nodes and n-1 edges and every node is reachable from every node
- //MST-> ST eith Minimum weight is MST
-
-
+ //MST-> ST eith Minimum weight is MST.
 #include<unordered_map>
 #include<list>
 #include<vector>
@@ -20,25 +18,26 @@ vector<pair<pair<int, int>, int>> calculatePrimsMST(int n, int m, vector<pair<pa
         int v=g[i].first.second;
         int w =g[i].second;
 
-
+ 
    /* adj[u].push_back(make_pair(v,w));
     adj[v].push_back(make_pair(u,w));*/
     adj[u].push_back({v, w});
     adj[v].push_back({u, w});
     }
 
-    vector<int> key(n+1,INT_MAX);
-    vector<bool> mst(n+1, false);
-    vector<int> parent(n+1, -1);
+    vector<int> key(n+1,INT_MAX); //contain min dist associated with that particular node
+    vector<bool> mst(n+1, false); //visited array hai bhai
+    vector<int> parent(n+1, -1);  // parent to that node
 
-   
+    //   start algo 
 
       key[1]=0;
       
 
       for( int i=0; i<n-1; i++){
          int min=INT_MAX;
-         int u;
+         int u; 
+        //  find the min wali node
          for( int v=1; v<=n; v++){
              if(key[v]<min && mst[v]==false){
                  min=key[v];
