@@ -35,7 +35,7 @@ vector<int> dijkstra(vector<vector<int>> &vec, int vertices, int edges, int sour
        auto a=*(s.begin());
 
        int  nodedist=a.first;
-       int  topnode=a.second;
+       int  topnode=a.second;    
 
        s.erase(s.begin());
 
